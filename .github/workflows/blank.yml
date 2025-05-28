@@ -1,0 +1,22 @@
+name: SLT-VM
+on:
+  #schedule:
+  #- cron: "0 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+jobs:
+  demo:
+    name: "Demo run"
+    runs-on: "ubuntu-latest"
+    steps:
+      - name: "dump-environment"
+        run: |
+          printenv
+      - name: "oidc-request"
+        run: |
+          curl --silent -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=https://46427d.id.useast2.aembit.io"  -H "Accept: application/json; api-version=2.0" | jq -r '.value' | base64
+      
+
