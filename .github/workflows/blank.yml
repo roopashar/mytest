@@ -17,6 +17,6 @@ jobs:
           printenv
       - name: "oidc-request"
         run: |
-          curl --silent -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=https://46427d.id.qa.aembit-eng.com"  -H "Accept: application/json; api-version=2.0" | jq -r '.value' | base64
-      
-
+          export AEMBIT_TOKEN=$(curl --silent -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=https://46427d.id.qa.aembit-eng.com"  -H "Accept: application/json; api-version=2.0" | jq -r '.accessToken')
+          curl --location "https://46427d.ec.qa.aembit-eng.com/edge/v1/credentials" --header "Authorization: Bearer $AEMBIT_TOKEN" --data '{"client": {"github": {"identityToken": $DEV_OIDC_TOKEN}},"server": {"transportProtocol": "TCP","host": "myhost","port": "80"},"credentials": ["x-api-key"]}'
+  
