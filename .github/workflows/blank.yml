@@ -20,7 +20,7 @@ jobs:
           export OIDC_TOKEN=$(curl --silent -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=https://46427d.id.qa.aembit-eng.com"  -H "Accept: application/json; api-version=2.0" | jq -r '.value' | base64)
           echo $OIDC_TOKEN
       #    echo 'OTN="${{ $OIDC_TOKEN | base64 --decode }}"' >> $GITHUB_ENV
-          AEMBIT_TOKEN=$(curl -X POST --silent --location "https://46427d.ec.qa.aembit-eng.com/edge/v1/auth" -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Aembit-ResourceSet: ffffffff-ffff-ffff-ffff-ffffffffffff' --data '{"clientId": "aembit:qa:46427d:identity:github_idtoken:7fa254af-b20b-4fe9-bcdf-b72f3cce3155","client": {"github": {"identityToken":"${{ $OIDC_TOKEN | base64 --decode }}"}}}')
+      #    AEMBIT_TOKEN=$(curl -X POST --silent --location "https://46427d.ec.qa.aembit-eng.com/edge/v1/auth" -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Aembit-ResourceSet: ffffffff-ffff-ffff-ffff-ffffffffffff' --data '{"clientId": "aembit:qa:46427d:identity:github_idtoken:7fa254af-b20b-4fe9-bcdf-b72f3cce3155","client": {"github": {"identityToken":"${{ $OIDC_TOKEN | base64 --decode }}"}}}')
       #    echo "AEMBIT TOKEN IS"
       #    echo $AEMBIT_TOKEN
       #- name: "aembit-creds-request"
