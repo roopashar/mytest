@@ -17,9 +17,10 @@ jobs:
     steps:
       - name: "Download CLI"
         run: | 
-           curl -L https://releases.aembit-eng.com/agent/1.24.3191/linux/amd64/aembit_agent_cli_linux_amd64_1.24.3191.tar.gz -o aembit_cli.tar.gz | tar zx
-           cd aembit_cli
-           chmod +x aembit_cli
+           curl -L https://releases.aembit-eng.com/agent/1.24.3191/linux/amd64/aembit_agent_cli_linux_amd64_1.24.3191.tar.gz -o aembit_agent_cli.tar.gz
+           tar -xzf aembit_agent_cli.tar.gz
+           cd aembit_agent_cli*
+           chmod +x aembit*
       - name: "dump-environment"
         run: |
           printenv
