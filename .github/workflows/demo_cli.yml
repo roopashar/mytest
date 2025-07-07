@@ -19,8 +19,6 @@ jobs:
         run: | 
            curl -L https://releases.aembit-eng.com/agent/1.24.3191/linux/amd64/aembit_agent_cli_linux_amd64_1.24.3191.tar.gz -o aembit_agent_cli_linux_amd64_1.24.3191.tar.gz
            tar -xzf aembit_agent_cli_linux_amd64_1.24.3191.tar.gz
-           #cd aembit_agent_cli_linux_amd64_1.24.3191
-           #chmod +x aembit*
       - name: "dump-environment"
         run: |
           printenv
@@ -29,9 +27,6 @@ jobs:
           cd aembit_agent_cli_linux_amd64_1.24.3191
           export OIDC_TOKEN=$(curl --silent -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=https://46427d.id.qa.aembit-eng.com"  -H "Accept: application/json; api-version=2.0" | jq -r '.value' )
           echo $OIDC_TOKEN | base64
-          ./aembit --stack-domain qa.aembit-eng.com credentials get --client-id 'aembit:qa:46427d:identity:github_idtoken:7fa254af-b20b-4fe9-bcdf-b72f3cce3155' --id-token "$OIDC_TOKEN" --server-workload-host myhost --server-workload-port 80
-          #export AEMBIT_TOKEN=$(curl -X POST --silent --location "https://46427d.ec.qa.aembit-eng.com/edge/v1/auth" -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Aembit-ResourceSet: ffffffff-ffff-ffff-ffff-ffffffffffff' --data "{\"clientId\": \"aembit:qa:46427d:identity:github_idtoken:7fa254af-b20b-4fe9-bcdf-b72f3cce3155\",\"client\": {\"github\": {\"identityToken\":\"$OIDC_TOKEN\"}}}" | jq -r '.accessToken')
-          #echo "AEMBIT TOKEN IS"
-          #echo $AEMBIT_TOKEN | base64
-          #curl -X POST --silent --location "https://46427d.ec.qa.aembit-eng.com/edge/v1/credentials" --header "Authorization: Bearer $AEMBIT_TOKEN" -H 'Content-Type: application/json' -H 'Accept: application/json' --data "{\"credentialType\": \"ApiKey\", \"client\": {\"github\": {\"identityToken\": \"$OIDC_TOKEN\" } }, \"server\": { \"transportProtocol\": \"TCP\", \"host\": \"myhost\", \"port\": 80 } }" | jq         
+          $(./aembit --stack-domain qa.aembit-eng.com credentials get --client-id 'aembit:qa:46427d:identity:github_idtoken:7fa254af-b20b-4fe9-bcdf-b72f3cce3155' --id-token "$OIDC_TOKEN" --server-workload-host myhost --server-workload-port 80)
+          echo $TOKEN
           
