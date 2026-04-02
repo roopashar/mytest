@@ -19,8 +19,21 @@ jobs:
         run: |
           export OIDC_TOKEN=$(curl --silent -H "Authorization: Bearer $ACTIONS_ID_TOKEN_REQUEST_TOKEN" "$ACTIONS_ID_TOKEN_REQUEST_URL&audience=https://46427d.id.qa.aembit-eng.comm"  -H "Accept: application/json; api-version=2.0" | jq -r '.value' )
           echo $OIDC_TOKEN | base64
-          export AEMBIT_TOKEN=$(curl -X POST --silent --location "https://46427d.ec.qa.aembit-eng.com/edge/v1/auth" -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Aembit-ResourceSet: ffffffff-ffff-ffff-ffff-ffffffffffff' --data "{\"clientId\": \"aembit:qa:46427d:identity:github_idtoken:7fa254af-b20b-4fe9-bcdf-b72f3cce3155\",\"client\": {\"github\": {\"identityToken\":\"$OIDC_TOKEN\"}}}" | jq -r '.accessToken')
-          echo "AEMBIT TOKEN IS"
+          HTTP_STATUS=$(curl -X POST --silent -w "%{http_code}" -o response.json --location "https://46427d.ec.qa.aembit-eng.com/edge/v1/auth" -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Aembit-ResourceSet: ffffffff-ffff-ffff-ffff-ffffffffffff' --data "{\"clientId\": \"aembit:qa:46427d:identity:github_idtoken:7fa254af-b20b-4fe9-bcdf-b72f3cce3155\",\"client\": {\"github\": {\"identityToken\":\"$OIDC_TOKEN\"}}}")
+          
+          # 2. Check if the status is 200-299
+          if [ "$HTTP_STATUS" -lt 200 ] || [ "$HTTP_STATUS" -ge 300 ]; then
+            echo "::error::Request failed with status $HTTP_STATUS"
+            cat response.json
+            exit 1
+          fi
+
+          # 3. If we're here, it's safe to use jq
+          AEMBIT_TOKEN=$(jq -r '.accessToken' response.json)
+          echo "Successfully extracted name: $AEMBIT_TOKEN"
+        
+          #export AEMBIT_TOKEN=$(curl -X POST --silent --location "https://46427d.ec.qa.aembit-eng.com/edge/v1/auth" -H 'Content-Type: application/json' -H 'Accept: application/json' -H 'X-Aembit-ResourceSet: ffffffff-ffff-ffff-ffff-ffffffffffff' --data "{\"clientId\": \"aembit:qa:46427d:identity:github_idtoken:7fa254af-b20b-4fe9-bcdf-b72f3cce3155\",\"client\": {\"github\": {\"identityToken\":\"$OIDC_TOKEN\"}}}" | jq -r '.accessToken')
+          #echo "AEMBIT TOKEN IS"
           echo $AEMBIT_TOKEN | base64
           curl -X POST --silent --location "https://46427d.ec.qa.aembit-eng.com/edge/v1/credentials" --header "Authorization: Bearer $AEMBIT_TOKEN" -H 'Content-Type: application/json' -H 'Accept: application/json' --data "{\"credentialType\": \"ApiKey\", \"client\": {\"github\": {\"identityToken\": \"$OIDC_TOKEN\" } }, \"server\": { \"transportProtocol\": \"TCP\", \"host\": \"myhost\", \"port\": 80 } }" | jq         
           
