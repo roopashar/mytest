@@ -1,0 +1,181 @@
+# Edge QA Platform Compatibility Matrix
+# Source of truth for the GitHub Actions release-monitoring workflow.
+# The workflow diffs this file against endoflife.date daily and opens
+# EDGEX Jira tickets on any new release or EOL change detected.
+#
+# Fields:
+#   id:          endoflife.date product slug (used for API queries)
+#   cycle:       version/cycle string as used by endoflife.date
+#   label:       human-readable name shown in Jira tickets
+#   category:    vm-linux | vm-windows | container-aws | container-azure-gcp | cicd
+#   status:      supported | watch | deprecated
+#   eol_warn_days: days-before-EOL to trigger a P1 Jira ticket (default 180)
+#   track_new_releases: true = open a ticket whenever a new cycle appears in the API
+#   jira_project: Jira project key for auto-created tickets
+#   jira_labels:  list of labels applied to auto-created tickets
+
+defaults:
+  eol_warn_days: 180
+  jira_project: EDGEX
+  jira_labels:
+    - platform-compatibility
+    - release-monitoring
+
+platforms:
+
+  # ── VM · Linux ─────────────────────────────────────────────────────────────
+
+  - id: ubuntu
+    cycle: "22.04"
+    label: "Ubuntu 22.04 LTS (Jammy)"
+    category: vm-linux
+    status: supported
+    track_new_releases: false
+
+  - id: ubuntu
+    cycle: "24.04"
+    label: "Ubuntu 24.04 LTS (Noble)"
+    category: vm-linux
+    status: supported
+    track_new_releases: false
+
+  - id: ubuntu
+    cycle: "26.04"
+    label: "Ubuntu 26.04 LTS"
+    category: vm-linux
+    status: watch
+    track_new_releases: true   # open ticket when GA confirmed by endoflife.date
+
+  - id: rhel
+    cycle: "8"
+    label: "RHEL 8.x"
+    category: vm-linux
+    status: supported
+    track_new_releases: false
+
+  - id: rhel
+    cycle: "9"
+    label: "RHEL 9.x"
+    category: vm-linux
+    status: supported
+    track_new_releases: false
+
+  - id: rhel
+    cycle: "10"
+    label: "RHEL 10.x"
+    category: vm-linux
+    status: watch
+    track_new_releases: true
+
+  # ── VM · Windows ───────────────────────────────────────────────────────────
+
+  - id: windows-server
+    cycle: "2019"
+    label: "Windows Server 2019"
+    category: vm-windows
+    status: supported
+    track_new_releases: false
+
+  - id: windows-server
+    cycle: "2022"
+    label: "Windows Server 2022"
+    category: vm-windows
+    status: supported
+    track_new_releases: false
+
+  - id: windows-server
+    cycle: "2025"
+    label: "Windows Server 2025"
+    category: vm-windows
+    status: watch
+    track_new_releases: true
+
+  - id: windows
+    cycle: "10-iot"
+    label: "Windows 10 IoT LTSC 2021"
+    category: vm-windows
+    status: supported
+    track_new_releases: false
+
+  # ── Container · AWS ────────────────────────────────────────────────────────
+
+  - id: amazon-linux
+    cycle: "2023"
+    label: "Amazon Linux 2023 (ECS/EC2 base)"
+    category: container-aws
+    status: supported
+    track_new_releases: true
+
+  - id: eks
+    cycle: "1.29"
+    label: "EKS k8s 1.29"
+    category: container-aws
+    status: supported
+    eol_warn_days: 120          # EKS gives less notice than OS vendors
+    track_new_releases: false
+
+  - id: eks
+    cycle: "1.30"
+    label: "EKS k8s 1.30"
+    category: container-aws
+    status: supported
+    eol_warn_days: 120
+    track_new_releases: false
+
+  - id: eks
+    cycle: "1.31"
+    label: "EKS k8s 1.31"
+    category: container-aws
+    status: watch
+    eol_warn_days: 120
+    track_new_releases: true
+
+  # Lambda runtimes don't have endoflife.date entries; monitored via
+  # AWS RSS feed in a separate job (see aws-lambda-runtime-watch job below).
+  # Listed here for documentation only.
+  # - python3.12, nodejs20.x, java21
+
+  # ── Container · Azure & GCP ────────────────────────────────────────────────
+
+  - id: aks
+    cycle: "1.29"
+    label: "AKS k8s 1.29"
+    category: container-azure-gcp
+    status: supported
+    eol_warn_days: 120
+    track_new_releases: false
+
+  - id: aks
+    cycle: "1.30"
+    label: "AKS k8s 1.30"
+    category: container-azure-gcp
+    status: supported
+    eol_warn_days: 120
+    track_new_releases: false
+
+  - id: aks
+    cycle: "1.31"
+    label: "AKS k8s 1.31"
+    category: container-azure-gcp
+    status: watch
+    eol_warn_days: 120
+    track_new_releases: true
+
+  # ── CI/CD ──────────────────────────────────────────────────────────────────
+
+  - id: jenkins
+    cycle: "lts"
+    label: "Jenkins LTS"
+    category: cicd
+    status: supported
+    track_new_releases: true   # open ticket on each new LTS release
+
+  - id: gitlab-runner
+    cycle: "16"
+    label: "GitLab Runner 16.x"
+    category: cicd
+    status: supported
+    track_new_releases: true
+
+  # GitHub Actions runner is monitored via GitHub release watch (separate job).
+  # ubuntu-22.04 and ubuntu-24.04 runners tracked as ubuntu cycles above.
