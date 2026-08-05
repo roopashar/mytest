@@ -267,9 +267,7 @@ jobs:
     name: Build findings digest
     runs-on: ubuntu-latest
     needs: [endoflife-check, aws-lambda-runtime-watch]
-    if: |
-      needs.endoflife-check.outputs.has_findings == 'true' ||
-      needs.aws-lambda-runtime-watch.outputs.has_findings == 'true'
+    if: always()
     outputs:
       digest_json: ${{ steps.digest.outputs.digest_json }}
       p0_count: ${{ steps.digest.outputs.p0_count }}
