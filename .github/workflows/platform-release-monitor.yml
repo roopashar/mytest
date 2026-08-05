@@ -335,6 +335,71 @@ jobs:
           retention-days: 30
 
   # ────────────────────────────────────────────────────────────────────────────
+  # Job: Write the findings digest into docs/platform-release-monitor.md
+  # ────────────────────────────────────────────────────────────────────────────
+  update-docs:
+    name: Update docs
+    runs-on: ubuntu-latest
+    needs: build-digest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Download findings digest
+        uses: actions/download-artifact@v4
+        with:
+          name: findings-digest
+
+      - name: Build docs page
+        run: |
+          mkdir -p docs
+          python3 - <<'PYEOF'
+          import json
+
+          with open("findings-digest.json") as f:
+              digest = json.load(f)
+
+          TYPE_LABEL = {
+              "new_release":         "New release",
+              "eol_critical":        "EOL critical",
+              "eol_warning":         "EOL warning",
+              "lambda_runtime_news": "Lambda runtime news",
+          }
+
+          lines = [
+              "# Platform Release Monitor",
+              "",
+              f"_Last updated: {digest['date']}_",
+              "",
+              f"**{digest['total']} finding(s)** — {digest['p0_count']} P0, {digest['p1_count']} P1",
+              "",
+              f"[Compatibility Matrix]({digest['confluence_url']}) · [Latest run]({digest['run_url']})",
+              "",
+              "| Priority | Type | Platform | Detail |",
+              "|---|---|---|---|",
+          ]
+          for f in digest["findings"]:
+              label  = TYPE_LABEL.get(f.get("type", ""), f.get("type", ""))
+              detail = f.get("eol", "") or ""
+              if f.get("days_remaining") is not None:
+                  detail += f" ({f['days_remaining']}d)"
+              if f.get("url"):
+                  detail += f" — [link]({f['url']})"
+              lines.append(f"| {f['priority']} | {label} | {f['label']} | {detail} |")
+
+          with open("docs/platform-release-monitor.md", "w") as out:
+              out.write("\n".join(lines) + "\n")
+          PYEOF
+
+      - name: Commit and push docs
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add docs/platform-release-monitor.md
+          git diff --staged --quiet || git commit -m "docs: update platform release monitor findings [skip ci]" && git push || true
+
+  # ────────────────────────────────────────────────────────────────────────────
   # Job 4: Send Slack notification
   #   Requires secret: SLACK_WEBHOOK_URL
   #   To add later: create an Incoming Webhook in your Slack workspace and
