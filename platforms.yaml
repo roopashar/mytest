@@ -8,7 +8,10 @@
 #   cycle:       version/cycle string as used by endoflife.date
 #   label:       human-readable name shown in Jira tickets
 #   category:    vm-linux | vm-windows | container-aws | container-azure-gcp | cicd
-#   status:      supported | watch | deprecated
+#   status:      supported | watch | in-progress | deprecated
+#                watch        = upstream release not yet GA; monitoring endoflife.date for it to appear
+#                in-progress  = upstream has released it, but we're still validating/rolling it out internally
+#                supported    = fully validated and supported in production
 #   eol_warn_days: days-before-EOL to trigger a P1 Jira ticket (default 180)
 #   track_new_releases: true = open a ticket whenever a new cycle appears in the API
 #   jira_project: Jira project key for auto-created tickets
@@ -43,8 +46,8 @@ platforms:
     cycle: "26.04"
     label: "Ubuntu 26.04 LTS"
     category: vm-linux
-    status: watch
-    track_new_releases: true   # open ticket when GA confirmed by endoflife.date
+    status: in-progress   # released upstream; validation/rollout in progress
+    track_new_releases: true   # keep watching for the next unreleased cycle
 
   - id: rhel
     cycle: "8"
