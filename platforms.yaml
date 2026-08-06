@@ -29,6 +29,13 @@ platforms:
   # ── VM · Linux ─────────────────────────────────────────────────────────────
 
   - id: ubuntu
+    cycle: "20.04"
+    label: "Ubuntu 20.04 LTS (Focal)"
+    category: vm-linux
+    status: supported   # standard support ended upstream Apr 2025; we still support it via Ubuntu ESM (through 2030)
+    track_new_releases: false
+
+  - id: ubuntu
     cycle: "22.04"
     label: "Ubuntu 22.04 LTS (Jammy)"
     category: vm-linux
