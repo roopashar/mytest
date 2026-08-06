@@ -1,0 +1,635 @@
+{
+  "ubuntu:22.04": {
+    "eol": "2027-04-01",
+    "seen": "2026-08-06"
+  },
+  "ubuntu:24.04": {
+    "eol": "2029-05-31",
+    "seen": "2026-08-06"
+  },
+  "ubuntu:25.10": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:25.04": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:24.10": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:23.10": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:23.04": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:22.10": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:21.10": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:21.04": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:20.10": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:20.04": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:19.10": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:19.04": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:18.10": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:18.04": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:17.10": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:17.04": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:16.10": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:16.04": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:15.10": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:15.04": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:14.10": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:14.04": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:13.10": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:13.04": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:12.10": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:12.04": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:11.10": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:11.04": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:10.10": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:10.04": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:9.10": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:9.04": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:8.10": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:8.04": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:7.10": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:7.04": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:6.10": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:6.06": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:5.10": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:5.04": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:4.10": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "ubuntu:26.04": {
+    "eol": "2031-04-30",
+    "seen": "2026-08-06"
+  },
+  "rhel:8": {
+    "eol": "2029-05-31",
+    "seen": "2026-08-06"
+  },
+  "rhel:9": {
+    "eol": "2032-05-31",
+    "seen": "2026-08-06"
+  },
+  "rhel:7": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "rhel:6": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "rhel:5": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "rhel:4": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "rhel:10": {
+    "eol": "2035-05-31",
+    "seen": "2026-08-06"
+  },
+  "windows-server:2019": {
+    "eol": "2029-01-09",
+    "seen": "2026-08-06"
+  },
+  "windows-server:2022": {
+    "eol": "2031-10-14",
+    "seen": "2026-08-06"
+  },
+  "windows-server:23h2-ac": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "windows-server:20h2-sac": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "windows-server:2004-sac": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "windows-server:1909-sac": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "windows-server:1903-sac": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "windows-server:1809-sac": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "windows-server:1803-sac": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "windows-server:1709-sac": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "windows-server:2016": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "windows-server:2012-r2": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "windows-server:2012": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "windows-server:2008-r2-sp1": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "windows-server:2008-sp2": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "windows-server:2003-sp2": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "windows-server:2003-sp1": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "windows-server:2003": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "windows-server:2000": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "windows-server:2025": {
+    "eol": "2034-11-14",
+    "seen": "2026-08-06"
+  },
+  "windows:10-iot": {},
+  "amazon-linux:2": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "amazon-linux:2018.03": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "amazon-linux:2017.09": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "amazon-linux:2017.03": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "amazon-linux:2016.09": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "amazon-linux:2016.03": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "amazon-linux:2015.09": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "amazon-linux:2015.03": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "amazon-linux:2014.09": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "amazon-linux:2014.03": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "amazon-linux:2013.09": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "amazon-linux:2013.03": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "amazon-linux:2012.09": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "amazon-linux:2012.03": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "amazon-linux:2011.09": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "amazon-linux:2010.11": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "amazon-linux:2023": {
+    "eol": "2029-06-30",
+    "seen": "2026-08-06"
+  },
+  "eks:1.29": {
+    "eol": "2025-03-23",
+    "seen": "2026-08-06",
+    "notified_p0": "2025-03-23"
+  },
+  "eks:1.30": {
+    "eol": "2025-07-23",
+    "seen": "2026-08-06",
+    "notified_p0": "2025-07-23"
+  },
+  "eks:1.36": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "eks:1.35": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "eks:1.34": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "eks:1.33": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "eks:1.32": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "eks:1.28": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "eks:1.27": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "eks:1.26": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "eks:1.25": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "eks:1.24": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "eks:1.23": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "eks:1.22": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "eks:1.21": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "eks:1.20": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "eks:1.19": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "eks:1.18": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "eks:1.31": {
+    "eol": "2025-11-26",
+    "seen": "2026-08-06",
+    "notified_p0": "2025-11-26"
+  },
+  "aks:1.29": {
+    "eol": "2025-03-31",
+    "seen": "2026-08-06",
+    "notified_p0": "2025-03-31"
+  },
+  "aks:1.30": {
+    "eol": "2025-08-22",
+    "seen": "2026-08-06",
+    "notified_p0": "2025-08-22"
+  },
+  "aks:1.36": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "aks:1.35": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "aks:1.34": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "aks:1.33": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "aks:1.32": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "aks:1.28": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "aks:1.27": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "aks:1.26": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "aks:1.25": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "aks:1.24": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "aks:1.23": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "aks:1.22": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "aks:1.21": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "aks:1.31": {
+    "eol": "2025-11-01",
+    "seen": "2026-08-06",
+    "notified_p0": "2025-11-01"
+  },
+  "jenkins:2": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "jenkins:2.555": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "jenkins:2.541": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "jenkins:2.528": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "jenkins:2.516": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "jenkins:2.504": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "jenkins:2.492": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "jenkins:2.479": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "jenkins:2.462": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "jenkins:2.452": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "jenkins:2.440": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "jenkins:2.426": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "jenkins:2.414": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "jenkins:2.401": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "jenkins:2.387": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "jenkins:2.375": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "jenkins:2.361": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "jenkins:2.346": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "jenkins:lts": {},
+  "gitlab-runner:19.2": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "gitlab-runner:19.1": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "gitlab-runner:19.0": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "gitlab-runner:18.11": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "gitlab-runner:18.10": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "gitlab-runner:18.9": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "gitlab-runner:18.8": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "gitlab-runner:18.7": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "gitlab-runner:18.6": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "gitlab-runner:18.5": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "gitlab-runner:18.4": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "gitlab-runner:18.3": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "gitlab-runner:18.2": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "gitlab-runner:18.1": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "gitlab-runner:18.0": {
+    "seen": "2026-08-06",
+    "notified_new": true
+  },
+  "gitlab-runner:16": {}
+}
