@@ -18,6 +18,7 @@ _Last updated: 2026-08-06_
 
 | Platform | Version | EOL Date | Status | Notes |
 |---|---|---|---|---|
+| ubuntu | 20.04 | — | 🔴 EOL CRITICAL | Ubuntu 20.04 LTS (Focal) |
 | ubuntu | 22.04 | 2027-04-01 | SUPPORTED | Ubuntu 22.04 LTS (Jammy) |
 | ubuntu | 24.04 | 2029-05-31 | SUPPORTED | Ubuntu 24.04 LTS (Noble) |
 | ubuntu | 26.04 | 2031-04-30 | IN PROGRESS | Ubuntu 26.04 LTS |
@@ -41,17 +42,17 @@ _Last updated: 2026-08-06_
 | Platform | Version | EOL Date | Status | Notes |
 |---|---|---|---|---|
 | amazon-linux | 2023 | 2029-06-30 | SUPPORTED | Amazon Linux 2023 (ECS/EC2 base) |
-| eks | 1.29 | 2025-03-23 | 🟡 EOL WARNING | EKS k8s 1.29 |
-| eks | 1.30 | 2025-07-23 | 🟡 EOL WARNING | EKS k8s 1.30 |
-| eks | 1.31 | 2025-11-26 | 🟡 EOL WARNING | EKS k8s 1.31 |
+| eks | 1.29 | 2025-03-23 | 🔴 EOL CRITICAL | EKS k8s 1.29 |
+| eks | 1.30 | 2025-07-23 | 🔴 EOL CRITICAL | EKS k8s 1.30 |
+| eks | 1.31 | 2025-11-26 | 🔴 EOL CRITICAL | EKS k8s 1.31 |
 
 ### Azure & GCP
 
 | Platform | Version | EOL Date | Status | Notes |
 |---|---|---|---|---|
-| aks | 1.29 | 2025-03-31 | 🟡 EOL WARNING | AKS k8s 1.29 |
-| aks | 1.30 | 2025-08-22 | 🟡 EOL WARNING | AKS k8s 1.30 |
-| aks | 1.31 | 2025-11-01 | 🟡 EOL WARNING | AKS k8s 1.31 |
+| aks | 1.29 | 2025-03-31 | 🔴 EOL CRITICAL | AKS k8s 1.29 |
+| aks | 1.30 | 2025-08-22 | 🔴 EOL CRITICAL | AKS k8s 1.30 |
+| aks | 1.31 | 2025-11-01 | 🔴 EOL CRITICAL | AKS k8s 1.31 |
 
 ## CI/CD form factors
 
@@ -62,15 +63,16 @@ _Last updated: 2026-08-06_
 
 ## Today's Findings
 
-**6 finding(s)** — 0 P0, 6 P1
+**7 finding(s)** — 7 P0, 0 P1
 
-[Compatibility Matrix](https://aembit.atlassian.net/wiki/spaces/ENGINEERIN/pages/1795031044/Edge+Platform+Compatibility+Matrix) · [Latest run](https://github.com/roopashar/mytest/actions/runs/31102465717)
+[Compatibility Matrix](https://aembit.atlassian.net/wiki/spaces/ENGINEERIN/pages/1795031044/Edge+Platform+Compatibility+Matrix) · [Latest run](https://github.com/roopashar/mytest/actions/runs/31103962121)
 
 | Priority | Type | Platform | Detail |
 |---|---|---|---|
-| P1 | EOL warning | EKS k8s 1.31 | 2025-11-26 (-253d) |
-| P1 | EOL warning | AKS k8s 1.31 | 2025-11-01 (-278d) |
-| P1 | EOL warning | AKS k8s 1.30 | 2025-08-22 (-349d) |
-| P1 | EOL warning | EKS k8s 1.30 | 2025-07-23 (-379d) |
-| P1 | EOL warning | AKS k8s 1.29 | 2025-03-31 (-493d) |
-| P1 | EOL warning | EKS k8s 1.29 | 2025-03-23 (-501d) |
+| P0 | EOL critical | EKS k8s 1.31 | 2025-11-26 (-253d) |
+| P0 | EOL critical | AKS k8s 1.31 | 2025-11-01 (-278d) |
+| P0 | EOL critical | AKS k8s 1.30 | 2025-08-22 (-349d) |
+| P0 | EOL critical | EKS k8s 1.30 | 2025-07-23 (-379d) |
+| P0 | EOL critical | Ubuntu 20.04 LTS (Focal) | 2025-05-31 (-432d) |
+| P0 | EOL critical | AKS k8s 1.29 | 2025-03-31 (-493d) |
+| P0 | EOL critical | EKS k8s 1.29 | 2025-03-23 (-501d) |
