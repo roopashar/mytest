@@ -179,7 +179,15 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .github/platform-monitor/known-state.json
-          git diff --staged --quiet || git commit -m "chore: update platform monitor state [skip ci]" && git push || true
+          if git diff --staged --quiet; then
+            echo "No state changes to commit"
+          else
+            git commit -m "chore: update platform monitor state [skip ci]"
+            for i in 1 2 3 4 5; do
+              git pull --rebase origin main && git push && break
+              sleep $((RANDOM % 5 + 1))
+            done
+          fi
 
   # ────────────────────────────────────────────────────────────────────────────
   # Job 2: Watch AWS Lambda runtime deprecations via RSS
@@ -256,7 +264,15 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add .github/platform-monitor/lambda-rss-state.json
-          git diff --staged --quiet || git commit -m "chore: update lambda RSS state [skip ci]" && git push || true
+          if git diff --staged --quiet; then
+            echo "No state changes to commit"
+          else
+            git commit -m "chore: update lambda RSS state [skip ci]"
+            for i in 1 2 3 4 5; do
+              git pull --rebase origin main && git push && break
+              sleep $((RANDOM % 5 + 1))
+            done
+          fi
 
   # ────────────────────────────────────────────────────────────────────────────
   # Job 3: Format and write the findings digest
@@ -395,7 +411,15 @@ jobs:
           git config user.name  "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
           git add docs/platform-release-monitor.md
-          git diff --staged --quiet || git commit -m "docs: update platform release monitor findings [skip ci]" && git push || true
+          if git diff --staged --quiet; then
+            echo "No doc changes to commit"
+          else
+            git commit -m "docs: update platform release monitor findings [skip ci]"
+            for i in 1 2 3 4 5; do
+              git pull --rebase origin main && git push && break
+              sleep $((RANDOM % 5 + 1))
+            done
+          fi
 
   # ────────────────────────────────────────────────────────────────────────────
   # Job 4: Send Slack notification
